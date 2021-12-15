@@ -40,7 +40,7 @@ const Right = styled.div`
 `;
 
 const Wrapper = styled.div`
-    padding: 50px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 480px){
@@ -59,7 +59,8 @@ const Desc = styled.p`
     margin-top: 20px;
     color: #555;
     @media only screen and (max-width: 480px){
-    color: #1a1a1a;
+        color: #1a1a1a;
+        font-size: 16px;
     }
     
 `;
@@ -84,6 +85,7 @@ const Button = styled.button`
     margin-top: 30px;
     cursor: pointer;
     @media only screen and (max-width: 480px){
+        padding: 9px;
         margin-top: 5%;
         margin-bottom: 10%;
         }

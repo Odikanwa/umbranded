@@ -39,6 +39,9 @@ const Desc = styled.p`
     margin-top: 20px;
     color: #1a1a1a;
     justify-content: justify;
+    @media only screen and (max-width: 480px){
+        font-size: 16px;
+    }
 `;
 
 const Right = styled.div`
@@ -72,6 +75,8 @@ const Button = styled.button`
     cursor: pointer;
     @media only screen and (max-width: 480px){
         margin-top: 5%;
+        font-size: 19px;
+        padding: 8px;
     }
 `;
 

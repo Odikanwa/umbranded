@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     height: 50px;
+    @media only screen and (max-width: 480px){
+        font-size: 30px;
+        background-color: black;
+    }
 `;
 const Wrapper = styled.div`
     padding: 10px 20px;
@@ -22,7 +26,7 @@ const Logo = styled.div`
     font-size: 35px; 
     font-weight: bold;
     @media only screen and (max-width: 480px){
-        font-size: 25px;
+        font-size: 20px;
     }
 `;
 
@@ -90,6 +94,10 @@ const Button = styled.button`
     border-radius: 10px;
     letter-spacing: 2px;
     cursor: pointer;
+    @media only screen and (max-width: 480px){
+        padding: 5px;
+
+    }
 `;
 
 const Navbar = () => {
@@ -106,7 +114,7 @@ const Navbar = () => {
                         <MenuItemCrimson>Contact</MenuItemCrimson>
                     </Menu>
                 </Left>
-                <Button>JOIN TODAY</Button>
+                <Button>Menu</Button>
             </Wrapper>
         </Container>
     );

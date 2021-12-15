@@ -38,7 +38,7 @@ const Title = styled.span`
     font-size: 70px;
     color: white;
     @media only screen and (max-width: 480px){
-        font-size: 35px;
+        font-size: 25px;
     }
 `;
 // const SubTitle = styled.span`
@@ -53,6 +53,9 @@ const Desc = styled.p`
     color: #777;
     margin-top: 30px;
     margin-right: 60px;
+    @media only screen and (max-width: 480px){
+        font-size: 16px;
+    }
 `;
 const Button = styled.button`
     width: 150px;
@@ -64,6 +67,10 @@ const Button = styled.button`
     border-radius: 20px;
     margin-top: 30px;
     cursor: pointer;
+    @media only screen and (max-width: 480px){
+        font-size: 18px;
+        padding: 8px 10px;
+    }
 `;
 
 const Feature = () => {

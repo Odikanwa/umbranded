@@ -21,6 +21,7 @@ const Wrapper = styled.div`
     @media only screen and (max-width: 480px){
         flex-direction: column;
         padding-top: 0;
+        padding: 20px;
      }
 `;
 
@@ -38,7 +39,7 @@ const Title = styled.h1`
     color: black;
     z-index: 99;
     @media only screen and (max-width: 480px){
-        margin: 10px 20px 20px 25%;
+        margin: 10px 20px 20px 50px;
         font-size: 25px;
      }
 `;
@@ -139,7 +140,7 @@ const Button = styled.button`
     cursor: pointer;
     @media only screen and (max-width: 480px){
         font-size: 15px;
-        padding: 10px;
+        padding: 8px;
      }
 `;
 
@@ -173,8 +174,7 @@ const Contact = () => {
                     </AddressItem>
                     <AddressItem>
                         <Icon src={mail}/>
-                        <Text>contact@Umbranded.com | </Text>
-                        <Text>info@Umbranded.com</Text>
+                        <Text>contact@Umbranded.com</Text>
                     </AddressItem>
                 </AddressContainer>
             </Wrapper>

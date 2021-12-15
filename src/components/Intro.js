@@ -29,8 +29,9 @@ const Title = styled.h1`
     font-size: 60px;
     color: white;
     @media only screen and (max-width: 480px){
-        width: 100%;
-        font-size: 45px;
+        width: 70%;
+        font-size: 25px;
+        margin-right: 30%;
     }
 `;
 
@@ -44,8 +45,10 @@ const Desc = styled.p`
     margin-top: 20px;
     color: #e6e6e6;
     @media only screen and (max-width: 480px){
-        width: 100%;
+        width: 80%;
         color: black;
+        font-size: 16px;
+        margin-right: 20%
     }
 `;
 
@@ -71,7 +74,9 @@ const Button = styled.button`
     letter-spacing: 2px;
     cursor: pointer;
     @media only screen and (max-width: 480px){
+        font-size: 14px;
         margin-bottom: 30px;
+        padding: 9px;
     }
 `;
 
@@ -100,6 +105,7 @@ const Right = styled.div`
     height: 40%;
     @media only screen and (max-width: 480px){
         display: none;
+        
     }
 `;
 

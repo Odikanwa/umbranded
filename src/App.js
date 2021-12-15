@@ -30,7 +30,7 @@ const Shape = css`
 const IntoShape = styled.div`
     ${Shape}
     clip-path: circle(42.4% at 15% 40%);
-    background-color: crimson;
+    background-color: crimson !important;
     @media only screen and (max-width: 480px){
       clip-path: circle(50% at 4% 50%);
   }

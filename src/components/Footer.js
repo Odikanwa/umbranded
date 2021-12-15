@@ -77,7 +77,8 @@ const ListItem = styled.div`
     margin: 20px 0px;
     flex-direction: column;
     @media only screen and (max-width: 480px){
-        margin: 12px 0px;
+        margin: 8px 0px;
+        font-size: 14px;
      } 
 `;
 

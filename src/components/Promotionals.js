@@ -22,6 +22,9 @@ const Wrapper = styled.div`
     padding: 50px;
     display: flex;
     flex-direction: column;
+    @media only screen and (max-width: 480px){
+        padding: 20px;
+    }
 
 `;
 
@@ -36,6 +39,9 @@ const Desc = styled.p`
     margin-top: 20px;
     color: #1a1a1a;
     justify-content: justify;
+    @media only screen and (max-width: 480px){
+        font-size: 16px;
+    }
 `;
 
 const Right = styled.div`
@@ -62,6 +68,9 @@ const Button = styled.button`
     padding: 15px;
     margin-top: 40px;
     cursor: pointer;
+    @media only screen and (max-width: 480px){
+        padding: 8px;
+    }
 `
 
 const Promotionals = () => {
