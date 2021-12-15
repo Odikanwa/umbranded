@@ -75,13 +75,13 @@ const Button = styled.button`
 
 const PriceCard = ({price, type, customNumber, discount}) => {
 
-    // const buttonRef = useState();
+    const buttonRef = useState();
 
-    // useEffect(() => {
-    //     if (window.screen.width <= 480){
-    //         buttonRef.current.style.display = "none";
-    //     }
-    // })
+    useEffect(() => {
+        if (window.screen.width <= 480){
+            buttonRef.current.style.display = "none";
+        }
+    })
 
     return (
         <Container>
@@ -95,7 +95,7 @@ const PriceCard = ({price, type, customNumber, discount}) => {
                     <ListItem>{discount} discount on bulk orders</ListItem>
                     <ListItem>Access to all resources</ListItem> {''}
                 </List>
-                <Button >Join Now</Button>
+                <Button ref={buttonRef}>Join Now</Button>
         </Container>
     )
 }
