@@ -131,7 +131,7 @@ const Footer = () => {
             </Column>
             <Column>
                <List>
-                   <ListItem><Header>Manage Order</Header></ListItem>
+                   <ListItem><Header>Orders</Header></ListItem>
                    <ListItem>Liked Items</ListItem>
                    <ListItem>Place Order</ListItem>
                    <ListItem>Check Orders</ListItem>

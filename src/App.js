@@ -60,14 +60,14 @@ const PriceShape = styled.div`
 const FooterShapeCrimson = styled.div`
     ${Shape}
     position: absolute;
-    clip-path: polygon(0 0, 40% 0, 40% 100%, 0% 100%);
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
     background-color: crimson;
 `;
 
 const FooterShapeBlack = styled.div`
     ${Shape}
     position: absolute;
-    clip-path: polygon(40% 0, 100% 0%, 100% 100%, 40% 100%);
+    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
     background-color: black;
 `;
 
