@@ -89,7 +89,7 @@ const Phone = styled.span`
     color: #ff99ff;
     font-weight: bold;
     @media only screen and (max-width: 480px){
-        color: #990099;
+        color: #660066;
         font-size: 16px;
     }
 `;
@@ -98,7 +98,7 @@ const ContactText = styled.span`
     color: #ff80ff;
     margin-top: 5px;
     @media only screen and (max-width: 480px){
-        color: #ff1aff;
+        color: 	#660066;
     }
 `;
 
@@ -125,7 +125,7 @@ const Intro = () => {
                 <Info>
                     <Button>START A DESIGN</Button>
                     <Contact>
-                        <Phone> Call us (234) 811 233 0000</Phone>
+                        <Phone> Call us on (234) 811 233 0000</Phone>
                         <ContactText>For any enquiry or aid</ContactText>
                     </Contact>
                 </Info>
