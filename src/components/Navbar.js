@@ -5,7 +5,6 @@ const Container = styled.div`
     height: 50px;
     @media only screen and (max-width: 480px){
         font-size: 30px;
-        background-color: black;
     }
 `;
 const Wrapper = styled.div`
