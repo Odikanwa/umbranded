@@ -27,12 +27,23 @@ const Shape = css`
     z-index: -1;
 `;
 
-const IntoShape = styled.div`
+const IntoShapeBlack = styled.div`
+    ${Shape}
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    background-color: black;
+    @media only screen and (max-width: 480px){
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: -1;
+  }
+`;
+
+const IntoShapeCrimson = styled.div`
     ${Shape}
     clip-path: circle(42.4% at 15% 40%);
     background-color: crimson !important;
     @media only screen and (max-width: 480px){
       clip-path: circle(52% at 4% 52%);
+      z-index: 10;
   }
 `;
 
@@ -60,15 +71,21 @@ const PriceShape = styled.div`
 const FooterShapeCrimson = styled.div`
     ${Shape}
     position: absolute;
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+    clip-path: polygon(0 0, 40% 0, 40% 100%, 0% 100%);
     background-color: crimson;
+    @media only screen and (max-width: 480px){
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+   }
 `;
 
 const FooterShapeBlack = styled.div`
     ${Shape}
     position: absolute;
-    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(40% 0, 100% 0%, 100% 100%, 40% 100%);
     background-color: black;
+    @media only screen and (max-width: 480px){
+      clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
+   }
 `;
 
 function App() {
@@ -78,7 +95,8 @@ function App() {
     <Container>
       <Navbar/>
       <Intro/>
-      <IntoShape/>
+      <IntoShapeBlack/>
+      <IntoShapeCrimson/>
     </Container>
     <Container>
       <Feature/>

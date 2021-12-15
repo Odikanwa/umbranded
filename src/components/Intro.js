@@ -28,6 +28,7 @@ const Title = styled.h1`
     width: 60%;
     font-size: 60px;
     color: white;
+    z-index: 99;
     @media only screen and (max-width: 480px){
         width: 70%;
         font-size: 25px;
@@ -44,6 +45,7 @@ const Desc = styled.p`
     font-size: 20px; 
     margin-top: 20px;
     color: #e6e6e6;
+    z-index: 99;
     @media only screen and (max-width: 480px){
         width: 80%;
         color: #e6e6e6;
@@ -73,6 +75,7 @@ const Button = styled.button`
     border: none;
     letter-spacing: 2px;
     cursor: pointer;
+    z-index: 99;
     @media only screen and (max-width: 480px){
         font-size: 14px;
         margin-bottom: 30px;
@@ -88,8 +91,9 @@ const Contact = styled.div`
 const Phone = styled.span`
     color: #ff99ff;
     font-weight: bold;
+    z-index: 99;
     @media only screen and (max-width: 480px){
-        color: #660066;
+        color: #e6e6e6;
         font-size: 16px;
     }
 `;
@@ -97,8 +101,9 @@ const Phone = styled.span`
 const ContactText = styled.span`
     color: #ff80ff;
     margin-top: 5px;
+    z-index: 99;
     @media only screen and (max-width: 480px){
-        color: 	#660066;
+        color: 	#e6e6e6;
     }
 `;
 

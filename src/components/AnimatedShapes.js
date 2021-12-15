@@ -12,7 +12,7 @@ const Square = styled.div`
     position: absolute;
     top: -60px;
     left: -60px;
-    z-index: -1;
+    z-index: 9;
     animation: square 25s linear alternate infinite;
 
     @keyframes square {
@@ -39,7 +39,7 @@ const Oval = styled.div`
     position: absolute;
     top: -60px;
     left: 60px;
-    z-index: -1;
+    z-index: 9;
     animation: square 25s linear alternate infinite;
 
     @keyframes square {
@@ -64,7 +64,7 @@ const Circle = styled.div`
     position: absolute;
     bottom: -60px;
     left: -60px;
-    z-index: -1;
+    z-index: 9;
     animation: circle 25s linear alternate infinite;
 
     @keyframes circle {
@@ -88,7 +88,7 @@ const RightAngle = styled.div`
     position: absolute;
     top: 400px;
     left: -50px;
-    z-index: -1;
+    z-index: 9;
     animation: rightangle 25s linear alternate infinite;
 
     @keyframes rightangle {

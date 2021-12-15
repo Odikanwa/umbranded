@@ -84,7 +84,7 @@ const MenuItemCrimson = styled.li`
 `;
 
 const Button = styled.button`
-    border: 2px solid white;
+    border: none;
     padding: 10px 15px;
     background-color: crimson;
     color: white;
@@ -94,7 +94,7 @@ const Button = styled.button`
     letter-spacing: 2px;
     cursor: pointer;
     @media only screen and (max-width: 480px){
-        padding: 5px;
+        padding: 6px;
 
     }
 `;
@@ -120,3 +120,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+//Button: border; 2px solid white;
