@@ -83,20 +83,20 @@ const Button = styled.button`
     }
 `;
 
-const Contact = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
+// const Contact = styled.div`
+//     display: flex;
+//     flex-direction: column;
+// `;
 
-const Phone = styled.span`
-    color: #ff99ff;
-    font-weight: bold;
-    z-index: 99;
-    @media only screen and (max-width: 480px){
-        color: #e6e6e6;
-        font-size: 16px;
-    }
-`;
+// const Phone = styled.span`
+//     color: #ff99ff;
+//     font-weight: bold;
+//     z-index: 99;
+//     @media only screen and (max-width: 480px){
+//         color: #e6e6e6;
+//         font-size: 16px;
+//     }
+// `;
 
 const ContactText = styled.span`
     color: #ff80ff;
@@ -128,11 +128,7 @@ const Intro = () => {
                     uniquely umbranding one in the growing sea of creatives. Be original!
                 </Desc>
                 <Info>
-                    <Button>START A DESIGN</Button>
-                    <Contact>
-                        <Phone> Call us on (234) 811 233 0000</Phone>
-                        <ContactText>For any enquiry or aid</ContactText>
-                    </Contact>
+                    <Button>START A DESIGN</Button>  
                 </Info>
             </Left>
             <Right><Image src={Splash4}/></Right>
@@ -142,3 +138,7 @@ const Intro = () => {
 }
 
 export default Intro;
+{/* <Contact>
+<Phone> Call us on (234) 811 233 0000</Phone>
+<ContactText>For any enquiry or aid</ContactText>
+</Contact> */}
