@@ -50,7 +50,7 @@ const Oval = styled.div`
     }
     @media only screen and (max-width: 480px){
         color:  #ff66cc;
-        width: 70px;
+        width: 60px;
         height: 35px;
     }
 `;
