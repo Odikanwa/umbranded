@@ -90,6 +90,7 @@ const Phone = styled.span`
     font-weight: bold;
     @media only screen and (max-width: 480px){
         color: #990099;
+        font-size: 16px;
     }
 `;
 

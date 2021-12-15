@@ -25,7 +25,7 @@ const Logo = styled.div`
     font-size: 35px; 
     font-weight: bold;
     @media only screen and (max-width: 480px){
-        font-size: 20px;
+        font-size: 18px;
     }
 `;
 

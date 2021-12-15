@@ -110,7 +110,7 @@ const AddressItem = styled.div`
     align-items: center;
     margin-bottom: 40px;
     @media only screen and (max-width: 480px){
-        margin-bottom: 20px;
+        margin-bottom: 10px;
      }
 `;
 
