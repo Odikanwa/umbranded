@@ -46,7 +46,7 @@ const Desc = styled.p`
     color: #e6e6e6;
     @media only screen and (max-width: 480px){
         width: 80%;
-        color: black;
+        color: #e6e6e6;
         font-size: 16px;
         margin-right: 20%
     }
@@ -118,8 +118,8 @@ const Intro = () => {
         <Container>
             <Left>
                 <Title>Xplore the <Unfamiliar>unfamiliar</Unfamiliar></Title>
-                <Desc> We believe that audaciously umsplashing one's biased imagination is key to
-                    uniquely umbranding one in the growing sea of creatives. Soit Originale!
+                <Desc> We believe that audaciously umsplashing one's biased imagination is the key to
+                    uniquely umbranding one in the growing sea of creatives. Be original!
                 </Desc>
                 <Info>
                     <Button>START A DESIGN</Button>

@@ -55,7 +55,7 @@ const Desc = styled.p`
     margin-right: 60px;
     @media only screen and (max-width: 480px){
         font-size: 16px;
-        color:  #bfbfbf
+        color:  #bfbfbf;
     }
 `;
 const Button = styled.button`
