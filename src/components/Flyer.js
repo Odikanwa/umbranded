@@ -31,6 +31,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
 @media only screen and (max-width: 480px){
     font-size: 25px;
+    top: 0;
  }
 `;
 
@@ -58,7 +59,7 @@ const Image = styled.img`
     margin-left: 100px;
     margin-top: 10%;
     @media only screen and (max-width: 480px){
-        margin-top: 5%;
+        margin-top: 1.5%;
         margin-left: 50px;
     }
 `;
@@ -77,6 +78,7 @@ const Button = styled.button`
         margin-top: 5%;
         font-size: 19px;
         padding: 8px;
+        margin-top: 5%;
     }
 `;
 

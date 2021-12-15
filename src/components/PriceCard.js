@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -13,7 +13,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center; 
     @media only screen and (max-width: 480px){
-        height: 125%;
+        height: max-content;
         margin-right: 0; 
         margin-bottom: 10px;
         padding: 10px;
@@ -74,6 +74,15 @@ const Button = styled.button`
 `;
 
 const PriceCard = ({price, type, customNumber, discount}) => {
+
+    // const buttonRef = useState();
+
+    // useEffect(() => {
+    //     if (window.screen.width <= 480){
+    //         buttonRef.current.style.display = "none";
+    //     }
+    // })
+
     return (
         <Container>
             <PriceContainer>
@@ -86,7 +95,7 @@ const PriceCard = ({price, type, customNumber, discount}) => {
                     <ListItem>{discount} discount on bulk orders</ListItem>
                     <ListItem>Access to all resources</ListItem> {''}
                 </List>
-                <Button>Join Now</Button>
+                <Button >Join Now</Button>
         </Container>
     )
 }

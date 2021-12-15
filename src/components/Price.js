@@ -14,6 +14,7 @@ const Container = styled.div`
 `;
 
 const Price = () => {
+
     return (
         <Container>
             <PriceCard price='10' type='Basic' customNumber='100' discount='5%'/>
