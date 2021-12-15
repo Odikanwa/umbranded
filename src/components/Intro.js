@@ -118,7 +118,7 @@ const Intro = () => {
         <Container>
             <Left>
                 <Title>Xplore the <Unfamiliar>unfamiliar</Unfamiliar></Title>
-                <Desc> We believe that audaciously umsplashing one's biased imagination is the key to
+                <Desc> We believe that audaciously umsplashing one's biased imagination is the gitkey to
                     uniquely umbranding one in the growing sea of creatives. Be original!
                 </Desc>
                 <Info>
