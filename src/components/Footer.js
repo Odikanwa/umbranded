@@ -4,14 +4,15 @@ import globe from '../img/globe.png'
 import meta from '../img/meta.png'
 import instagram from '../img/instagram.png'
 import twitter from '../img/twitter.png'
+import { MediaQueries } from './MediaQueries'
 
 const Container = styled.div`
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column; 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         flex-direction: column;
-     }
+    }
 `;
 
 const Wrapper1 = styled.div`
@@ -20,10 +21,10 @@ const Wrapper1 = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         flex-wrap: wrap;
         align-items: stretch;
-     }
+    }
 `;
 
 const Wrapper2 = styled.div`
@@ -33,9 +34,9 @@ const Wrapper2 = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: black; 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         flex-direction: column;
-     }
+    }
 `;
 
 
@@ -46,11 +47,9 @@ const Column = styled.div`
     align-items: left;
     justify-content: center;
     flex-direction: column; 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         width: 48%;
-
-     }
-    
+    }  
 `;
 
 const Column2 = styled.div`
@@ -60,12 +59,9 @@ const Column2 = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         width: 100%;
-
-     }
-    
-
+    }
 `;
 
 const List = styled.ul`
@@ -76,19 +72,36 @@ const List = styled.ul`
 const ListItem = styled.div`
     margin: 20px 0px;
     flex-direction: column;
-    @media only screen and (max-width: 480px){
-        margin: 8px 0px;
-        font-size: 14px;
-     } 
+
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+     margin: 8px 0px;
+     font-size: 12px;
+    `} 
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+     margin: 8px 0px;
+     font-size: 1em;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+     margin: 8px 0px;
+     font-size: 1em;
+    `}
 `;
 
 const Header = styled.span`
     color: white;
     font-size: 24px;
     font-weight: bold;
-    @media only screen and (max-width: 480px){
-        font-size: 20px;
-     }
+
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+     font-size: 18px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+     font-size: 20px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+     font-size: 25px;
+    `}
+     
 `;
 
 const Icons = styled.img`
@@ -107,11 +120,11 @@ const Footer = () => {
     const handlesRef = useRef();
 
     useEffect(() =>{
-        if (window.screen.width <= 480){
+        if (window.screen.width <= 767){
             footerIconsRef.current.style.display = "none";
             langRef.current.style.display = "none";
         }
-        if (window.screen.width > 480){
+        if (window.screen.width >= 768){
             handlesRef.current.style.display = "none";
         }
     })

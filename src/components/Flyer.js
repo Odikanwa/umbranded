@@ -1,38 +1,52 @@
-import React from 'react'
+import React, {useEffect, createRef} from 'react'
 import styled from 'styled-components'
 import flyer from '../img/flyer5.jpg'
+import {MediaQueries} from './MediaQueries'
 
 const Container = styled.div`
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: row;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         flex-direction: column;
     }
 `;
 
 const Left = styled.div`
     width: 50%;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         width: 90%;
         height: 30%;
-    }
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    width: 100%;
+    height: 30%;
+`}
+${MediaQueries('mobileL_min', 'mobileL_max')`
+    width: 100%;
+    height: 30%;
+`}
 `;
 
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
     flex-direction: column;
-    @media only screen and (max-width: 480px){
-        padding: 10px 20px 20px 20px;
+    @media only screen and (max-width: 767px){
+        padding: 20px 20px 20px 20px;
     }
 `;
 
 const Title = styled.h1`
-@media only screen and (max-width: 480px){
-    font-size: 25px;
-    top: 0;
- }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+     font-size: 20px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 25px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 30px;
+    `}
 `;
 
 const Desc = styled.p`
@@ -40,52 +54,92 @@ const Desc = styled.p`
     margin-top: 20px;
     color: #1a1a1a;
     justify-content: justify;
-    @media only screen and (max-width: 480px){
-        font-size: 16px;
-    }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 15px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 1em;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 1em;
+    `}
 `;
 
 const Right = styled.div`
     width: 50%;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         width: 100%;
     }
 `;
 
 const Image = styled.img`
     width: 80%;
-    height: 80%;
+    height: 100%;
     padding-top: 10px;
     margin-left: 100px;
     margin-top: 10%;
-    @media only screen and (max-width: 480px){
-        margin-top: 1.5%;
-        margin-left: 50px;
-    }
+
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    height: 90%;
+    width: 100%;
+    margin-top: 3%;
+    margin-left: 20px;  
+    `}
+
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    height: 15em;
+    width: 90%;
+    margin-top: 3%;
+    margin-left: 20px; 
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    height: 92%;
+    width: 90%;
+    margin-top: 3%;
+    margin-left: 20px; 
+    `}
 `;
 
 const Button = styled.button`
     width: 180px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #800080;
     color: white;
     font-size: 20px;
     padding: 15px;
     margin-top: 40px;
     cursor: pointer;
-    @media only screen and (max-width: 480px){
-        margin-top: 5%;
-        font-size: 19px;
-        padding: 8px;
-        margin-top: 5%;
-    }
+    
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    margin-top: 5%;
+    font-size: 15px;
+    padding: 7px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    font-size: 18px;
+    padding: 8px 10px;
+    margin-top: 5%;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    font-size: 18px;
+    padding: 14px 20px;
+    margin-top: 5%;
+    `}
 `;
 
 const Flyer = () => {
+
+    const imageRef = createRef();
+    useEffect(() => {
+        if (window.screen.width <= 340){
+            imageRef.current.style.display = "none";
+        }
+    })
+
     return (
         <Container>
-            <Left><Image src={flyer}/></Left>
+            <Left ref={imageRef}><Image src={flyer}/></Left>
             <Right>
             <Wrapper>
                     <Title>Let's Fly the Word!</Title>

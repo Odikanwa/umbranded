@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import Feature from "./components/Feature";
+import Logo from "./components/Logo";
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
-import Service from "./components/Service";
+import BusinessCard from "./components/BusinessCard";
 import Price from "./components/Price";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -11,9 +11,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Promotionals from "./components/Promotionals";
 
-
 const Container = styled.div`
-    height: 100vh;
+    height: auto;
     overflow: hidden;
     position: relative;
 `;
@@ -31,9 +30,10 @@ const IntoShapeBlack = styled.div`
     ${Shape}
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     background-color: black;
+    z-index: -1;
     @media only screen and (max-width: 480px){
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      z-index: -1;
+      
   }
 `;
 
@@ -41,9 +41,10 @@ const IntoShapeCrimson = styled.div`
     ${Shape}
     clip-path: circle(42.4% at 15% 40%);
     background-color: crimson !important;
-    @media only screen and (max-width: 480px){
+    z-index: 10;
+    @media only screen and (max-width: 767px){
       clip-path: circle(52% at 4% 52%);
-      z-index: 10;
+      
   }
 `;
 
@@ -89,8 +90,10 @@ const FooterShapeBlack = styled.div`
 `;
 
 function App() {
+
   //const smallScreen = window.screen.height <= 480 ? true : false;
   return (
+    
     <>
     <Container>
       <Navbar/>
@@ -99,10 +102,10 @@ function App() {
       <IntoShapeCrimson/>
     </Container>
     <Container>
-      <Feature/>
+      <Logo/>
     </Container> 
     <Container>
-      <Service/>
+      <BusinessCard/>
       <ServiceShape/>
     </Container>
     <Container>
@@ -124,7 +127,8 @@ function App() {
       <FooterShapeCrimson/>
       <FooterShapeBlack/>
     </Container>
-    </>   
+    </>
+      
   )
 };
 //

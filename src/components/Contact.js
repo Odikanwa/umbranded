@@ -4,9 +4,10 @@ import Contact_background from '../img/Contact_background5.png'
 import address from '../img/address.png'
 import phone from '../img/phone2.png'
 import mail from '../img/mail.png'
+import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
-    height: 100%;
+    height: auto;
     background: url(${Contact_background});
     z-index: -1;
     background-color: white;
@@ -14,44 +15,76 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     height: 100%;
-    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         flex-direction: column;
         padding-top: 0;
         padding: 20px;
-     }
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
+        flex-direction: column;
+        padding-top: 0;
+        margin-left: 20px;
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        flex-direction: column;
+        padding-top: 0;
+        margin-left: 20px;
+     `}
+     
 `;
 
 const FormContainer = styled.div`
     width: 50%;
-    background-color: white;
-    padding: 20px;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         width: 100%;
-     }
+        height: 70%;
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+     `}
 `;
 
 const Title = styled.h1`
-    margin: 20px 20px 10px 20px;
     color: black;
     z-index: 99;
-    @media only screen and (max-width: 480px){
-        margin: 10px 20px 20px 50px;
-        font-size: 25px;
-     }
+    margin-top: 10%;
+    margin-bottom: 15%;
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+     margin-bottom: 10px;
+     font-size: 20px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    margin-bottom: 30px;
+    font-size: 25px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    margin-bottom: 30px;
+    font-size: 30px;
+    `}
 `;
 
 const Form = styled.div`
     height: 250px;
     display: flex;
-    align-items: center;
-    justify-content: center;@media only screen and (max-width: 480px){
+    align-items: flex-start;
+    @media only screen and (max-width: 767px){
         flex-direction: column;
-     }
-`;
+    }
+    `;
 
 
 const LeftForm = styled.div`
@@ -59,11 +92,13 @@ const LeftForm = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 20px;
-    @media only screen and (max-width: 480px){
-        height: 50%;
-        margin-right: 0;
-     }
+
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    `}
 `;
 
 const RightForm = styled.div`
@@ -71,61 +106,127 @@ const RightForm = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media only screen and (max-width: 480px){
-        height: 50%;
-     }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    `}
 `;
 
 const Input = styled.input`
     width: 200px;
     padding: 20px;
-    @media only screen and (max-width: 480px){
-        padding: 5px;
-     }
+    border: 2px solid #999999;
+    margin-bottom: 2%;
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+       padding: 5px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+       width: 240px;
+       padding: 7px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+       width: 300px;
+       padding: 10px;
+    `}
 `;
 
 const TextArea = styled.textarea`
     width: 200px;
     height: 60%;
     padding: 20px;
-    @media only screen and (max-width: 480px){
+    border: 2px solid #999999;
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         padding: 5px;
         margin-top: 20px;
-     }
+        
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
+        width: 240px;
+        padding: 40px 5px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        width: 300px;
+        padding: 60px 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+     `}
 `;
 
 const AddressContainer = styled.div`
     width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media only screen and (max-width: 480px){
-        width: 100%;
-        margin-top: 20px;
-     }
+    top: 0;
+
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+     width: 100%;
+     height: 100%;
+     align-items: flex-start;
+     margin-top: 10%;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+     width: 100%;
+     height: 100%;
+     align-items: flex-start;
+     margin-top: 25%;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+     width: 100%;
+     height: 100%;
+     align-items: flex-start;
+     margin-top: 35%;
+    `}
 `;
 
 const AddressItem = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         margin-bottom: 10px;
-     }
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
+        margin-bottom: 12px;
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        margin-bottom: 16px;
+     `}
 `;
 
 const Icon = styled.img`
     width: 20px;
     margin-right: 20px;
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    margin-right: 10px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    margin-right: 10px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    margin-right: 10px;
+    `}
 `;
 
 const Text = styled.span`
     font-size: 20px;
     background-color: white;
     margin-right: 10px;
-    @media only screen and (max-width: 480px){
-        font-size: 14px;
-     }
+
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+     font-size: 13px;
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
+     font-size: 15px;
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+     font-size: 1em;
+     `}
 `;
 
 const Button = styled.button`
@@ -134,14 +235,26 @@ const Button = styled.button`
     background-color: #800080;
     color: white;
     font-size: 20px;
-    font-weight: bold;
     border-radius: 20px;
     margin-top: 20px;
     cursor: pointer;
-    @media only screen and (max-width: 480px){
-        font-size: 15px;
-        padding: 8px;
-     }
+
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+    margin-top: 8%;
+    font-size: 15px;
+    padding: 7px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    margin-top: 10%;
+    font-size: 18px;
+    padding: 8px 10px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    margin-top: 6%;
+    font-size: 18px;
+    padding: 14px 20px;
+    `}
+    
 `;
 
 const Contact = () => {
@@ -169,12 +282,12 @@ const Contact = () => {
                     </AddressItem>
                     <AddressItem>
                         <Icon src={phone}/>
-                        <Text>+234 001 7778 9920</Text>
+                        <Text>+234 001 7778 9920,  </Text>
                         <Text>+234 001 7778 9921</Text>
                     </AddressItem>
                     <AddressItem>
                         <Icon src={mail}/>
-                        <Text>contact@Umbranded.com</Text>
+                        <Text>contact@umbranded.com</Text>
                     </AddressItem>
                 </AddressContainer>
             </Wrapper>

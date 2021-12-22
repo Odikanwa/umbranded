@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useEffect, createRef } from 'react'
 import styled from 'styled-components'
 import Card4 from '../img/Card4.png'
 import Carousel from './Carousel'
+import { MediaQueries } from './MediaQueries'
 
 
 const Container = styled.div`
+    height: auto;
     margin-top: 0vw;
     display: flex;
     height: max-content;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         flex-direction: column;
     }
 `;
 
 const Left = styled.div`
     width: 50%;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         width: 100%;
         display: none;
     }
@@ -26,16 +28,26 @@ const Image = styled.img`
     height: 90%;
     padding-top: 10px;
     margin-left: 100px;
-    @media only screen and (max-width: 480px){
-        margin-left: 30px;
-        padding-top: 1px;
-    }
+
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    margin-left: 30px;
+    padding-top: 1px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    margin-left: 30px;
+    padding-top: 1px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    margin-left: 30px;
+    padding-top: 1px;
+    `}
+    
 `;
 
 const Right = styled.div`
     width: 50%;
-    @media only screen and (max-width: 480px){
-       width: 100%;
+    @media only screen and (max-width: 767px){
+        width: 100%;
     }
 `;
 
@@ -43,25 +55,36 @@ const Wrapper = styled.div`
     padding: 20px;
     display: flex;
     flex-direction: column;
-    @media only screen and (max-width: 480px){
-        padding: 10% 20px 10px 20px;
-     }
 `;
 
 const Title = styled.h1`
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    font-size: 20px;
+`}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
     font-size: 25px;
-    }
+`}
+${MediaQueries('mobileM_min', 'mobileM_max')`
+    font-size: 30px;
+`}
 `;
 
 const Desc = styled.p`
     font-size: 20px;
     margin-top: 20px;
     color: #555;
-    @media only screen and (max-width: 480px){
-        color: #1a1a1a;
-        font-size: 16px;
-    }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    color: #1a1a1a;
+    font-size: 15px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    color: #1a1a1a;
+    font-size: 1em;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    color: #1a1a1a;
+    font-size: 1em;
+    `}
     
 `;
 
@@ -70,6 +93,10 @@ const CardContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-top: 30px;
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        margin-top: 10%;
+    `}
+    
     
     
 `;
@@ -77,18 +104,28 @@ const CardContainer = styled.div`
 const Button = styled.button`
     width: 180px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #800080;
     color: white;
     font-size: 20px;
     padding: 15px;
     margin-top: 30px;
     cursor: pointer;
-    @media only screen and (max-width: 480px){
-        padding: 9px;
-        margin-top: 5%;
-        margin-bottom: 10%;
-        }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 15px;
+        padding: 7px;
+        margin-top: 10%;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 18px;
+        padding: 8px 10px;
+        margin-top: 10%;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 18px;
+        font-size: 18px;
+        padding: 14px 20px;
+    `}
 `;
 
 // const Modal = styled.div`
@@ -100,16 +137,23 @@ const Button = styled.button`
 //     background-color: rgba(0, 0, 0, 0.5);
 // `;
 
-const Service = (props) => {
-    // const [open, setOpen] = useState(false);
-    // const smallScreen = window.screen.width <= 480 ? true : false;
+const BusinessCard = (props) => {
+    
+    const cardRef = createRef();
+
+    useEffect(() => {
+        if (window.screen.width <= 340){
+            cardRef.current.style.display = "none";
+        }
+    })
+
     return (
         <Container>
             <Left><Image src={Card4}/></Left>
             <Right>
                 <Wrapper>
                     <Title>Need a Business Card?</Title>
-                    <Desc> You can't begin to imagine the number of clients you 've lost because of your Socrates-era
+                    <Desc> You can't begin to imagine the number of clients you 've lost because of your bland looking-
                         card.
                     </Desc>
                     <Desc> Alright. Enough of the taunting. Here we go. Now haze out
@@ -117,7 +161,11 @@ const Service = (props) => {
                         a card, through. You want that card to carry the best impression it can manage. It has to sell 
                         your brand as quickly as ever; something even your high-priced suit coudn't score. Now ink it.
                     </Desc>
-                    <CardContainer>
+
+                    <Desc>
+                        You can check out our collection for inspiration.
+                    </Desc>
+                    <CardContainer ref={cardRef}>
                         <Carousel/>
                     </CardContainer>
                     <Button>Explore All</Button>
@@ -127,4 +175,4 @@ const Service = (props) => {
     );
 }
 
-export default Service;
+export default BusinessCard;

@@ -1,19 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 import promotionalImg from '../img/promotional.png'
+import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: row;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         flex-direction: column;
-    }
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        flex-direction: column-reverse;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        flex-direction: column-reverse;
+    `}
 `;
 
 const Left = styled.div`
     width: 45%;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         width: 100%;
     }
 `;
@@ -22,16 +29,27 @@ const Wrapper = styled.div`
     padding: 50px;
     display: flex;
     flex-direction: column;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         padding: 20px;
-    }
-
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        padding: 20px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        padding: 20px;
+    `}
 `;
 
 const Title = styled.h1`
-@media only screen and (max-width: 480px){
+${MediaQueries('mobileS_min', 'mobileS_max')`
+    font-size: 20px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
     font-size: 25px;
-}
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    font-size: 30px;
+    `}
 `;
 
 const Desc = styled.p`
@@ -39,16 +57,28 @@ const Desc = styled.p`
     margin-top: 20px;
     color: #1a1a1a;
     justify-content: justify;
-    @media only screen and (max-width: 480px){
-        font-size: 16px;
-    }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    font-size: 15px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 1em;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 1em;
+    `}
 `;
 
 const Right = styled.div`
     width: 55%;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         display: none;
-    }
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    width: 100%;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    width: 100%;
+    `}
 `;
 
 const Image = styled.img`
@@ -56,22 +86,44 @@ const Image = styled.img`
     height: 90%;
     padding-top: 10px;
     margin-right: 50px;
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    height: 90%;
+    width: 100%;
+    margin-top: 20px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    height: 90%;
+    width: 100%;
+    margin-top: 20px;
+    `}
 `;
 
 const Button = styled.button`
     width: 180px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #800080;
     color: white;
     font-size: 20px;
     padding: 15px;
     margin-top: 40px;
     cursor: pointer;
-    @media only screen and (max-width: 480px){
-        padding: 8px;
-    }
-`
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 15px;
+        padding: 7px;
+        margin-top: 10%;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 18px;
+        padding: 8px 10px;
+        margin-top: 10%;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 18px;
+        padding: 14px 20px;
+        margin-top: 6%;
+    `}
+`;
 
 const Promotionals = () => {
     return (

@@ -29,8 +29,8 @@ const Square = styled.div`
 `;
 
 const Oval = styled.div`
-    width: 200px; 
-    height: 100px; 
+    width: 100px; 
+    height: 55px; 
     -moz-border-radius: 100px / 50px; 
     -webkit-border-radius: 100px / 50px; 
     border-radius: 100px / 50px;

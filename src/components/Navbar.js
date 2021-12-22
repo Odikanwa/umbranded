@@ -1,17 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
     height: 50px;
-    @media only screen and (max-width: 480px){
-        font-size: 30px;
-    }
 `;
 const Wrapper = styled.div`
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 `;
 
 const Left = styled.div`
@@ -24,9 +23,28 @@ const Left = styled.div`
 const Logo = styled.div`
     font-size: 35px; 
     font-weight: bold;
-    @media only screen and (max-width: 480px){
-        font-size: 18px;
-    }
+    z-index: 99;
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    font-size: 15px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    font-size: 18px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    font-size: 22px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
 `;
 
 const Umb = styled.span`
@@ -35,31 +53,39 @@ const Umb = styled.span`
     text-underline-offset: 2px;
 `;
 
-const Ran = styled.span`
-    color: #ffff00;
+const Randed = styled.span`
+    color: #ffff00;;
     text-decoration: underline;
     text-underline-offset: 2px;
-    @media only screen and (max-width: 480px){
-        color:  #ff471a;
-    }
 `;
 
-const Ded = styled.span`
-    color: 	 #ffff00;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    @media only screen and (max-width: 480px){
-        color:  #ff471a;
-    }
-`;
 
 const Menu = styled.ul`
     display: flex;
     list-style: none;
-
-    @media only screen and (max-width: 480px){
-        display: none;
-    }
+    z-index: 99;
+    
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    display: none;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    display: none;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    display: none;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
 `;
 const MenuItemWhite = styled.li`
     margin-right: 30px;
@@ -93,18 +119,39 @@ const Button = styled.button`
     border-radius: 10px;
     letter-spacing: 2px;
     cursor: pointer;
-    @media only screen and (max-width: 480px){
-        padding: 6px;
 
-    }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    font-size: 12px;
+    padding: 5px;
+    
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    font-size: 14px;
+    padding: 6px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    font-size: 1em;
+    padding: 9px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    
+    `}
 `;
-
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <Container>
             <Wrapper>
                 <Left>
-                    <Logo><Umb>Umb</Umb><Ran>ran</Ran><Ded>ded</Ded></Logo>
+                    <Logo><Umb>Umb</Umb><Randed>randed</Randed></Logo>
                     <Menu>
                         <MenuItemWhite>Home</MenuItemWhite>
                         <MenuItemWhite>features</MenuItemWhite>
@@ -121,3 +168,9 @@ const Navbar = () => {
 
 export default Navbar;
 //Button: border; 2px solid white;
+// @media only screen and (min-width: 480px) and (max-width: 750px) {
+//     color: green;
+// }
+// @media only screen and (max-width: 480px){
+//     color:  #ff471a;
+// }

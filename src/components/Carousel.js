@@ -14,6 +14,7 @@ import minicard10 from '../img/minicard10.png'
 import minicard11 from '../img/minicard11.png'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { MediaQueries } from "./MediaQueries";
 
 const Container = styled.div`
     width: max-content;
@@ -41,10 +42,21 @@ const Image = styled.img`
     &: hover{
       opacity: 0.7;
     }
-    @media only screen and (max-width: 480px){
+   ${MediaQueries('mobileS_min', 'mobileS_max')`
       margin-left: 10px;
       margin-right: 10px;
-   }
+      height: 150px;
+`}
+${MediaQueries('mobileM_min', 'mobileM_max')`
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 180px;
+`}
+${MediaQueries('mobileL_min', 'mobileL_max')`
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 210px;
+`}
 `;
 
 
@@ -79,7 +91,7 @@ export default class Carousel extends Component {
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 539,
           settings: {
             arrows: true,
             dots: false,

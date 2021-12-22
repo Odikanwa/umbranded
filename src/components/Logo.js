@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Splash5 from '../img/Splash5.jpg'
+import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
-    height: 100vh;
+    height: auto;
     display: flex;
     background-color: #000000;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         flex-direction: column;
         padding: 30px 20px;
         border-top: 0.3px solid #bfbfbf;
@@ -15,14 +16,27 @@ const Container = styled.div`
 
 const Left = styled.div`
     width: 50%;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
         display: none;
-    }
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    width: 100%;
+    height: 35%;
+        align-items: center;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    width: 100%;
+    height: 35%;
+        align-items: center;
+    `}
 `;
 
 const Image = styled.img`
     width: 90%;
     height:100%;
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        align-self: center;
+    `}
 `;
 
 const Right = styled.div`
@@ -30,7 +44,7 @@ const Right = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 767px){
         width: 100%;
     }
 `;
@@ -41,6 +55,32 @@ const Title = styled.span`
     @media only screen and (max-width: 480px){
         font-size: 25px;
     }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+    font-size: 20px;
+    margin-bottom: 0px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    font-size: 25px;
+    margin-top: 20px;
+    margin-botttom: 0px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+    font-size: 30px;
+    margin-top: 20px;
+    margin-botttom: 0px;
+    `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    
+    `}
+    ${MediaQueries('laptop_min', 'laptop_max')`
+    
+    `}
+    ${MediaQueries('laptopL_min', 'laptopL_max')`
+    
+    `}
+    ${MediaQueries('desktop')`
+    
+    `}
 `;
 // const SubTitle = styled.span`
 //     font-size: 24px;
@@ -51,13 +91,20 @@ const Title = styled.span`
 
 const Desc = styled.p`
     font-size: 20px;
-    color: #777;
+    color:  #bfbfbf;
     margin-top: 30px;
-    margin-right: 60px;
-    @media only screen and (max-width: 480px){
-        font-size: 16px;
-        color:  #bfbfbf;
-    }
+
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 15px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 1em;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 1em;
+    `}
 `;
 const Button = styled.button`
     width: 150px;
@@ -69,13 +116,21 @@ const Button = styled.button`
     border-radius: 20px;
     margin-top: 30px;
     cursor: pointer;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 15px;
+        padding: 7px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
         font-size: 18px;
         padding: 8px 10px;
-    }
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 18px;
+        padding: 14px 20px;
+    `}
 `;
 
-const Feature = () => {
+const Logo = () => {
     return (
         <Container>
             <Left><Image src={Splash5}/></Left>
@@ -99,5 +154,5 @@ const Feature = () => {
     )
 }
 
-export default Feature
+export default Logo;
 //Branding: Logo, Letterhead, business cards, Resume

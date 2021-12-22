@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {createRef, useEffect} from 'react'
 import styled from 'styled-components'
+import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
     margin-right: 50px; 
@@ -12,12 +13,24 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center; 
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        height: max-content;
+        margin-right: 0; 
+        margin-bottom: 5px;
+        padding: 10px;
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
         height: max-content;
         margin-right: 0; 
         margin-bottom: 10px;
         padding: 10px;
-     }
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        height: max-content;
+        margin-right: 0; 
+        margin-bottom: 5px;
+        padding: 10px;
+     `}
 `;
 
 const PriceContainer = styled.div`
@@ -28,9 +41,15 @@ const PriceContainer = styled.div`
 const Price = styled.span`
     font-weight: bold;
     font-size: 50px;
-    @media only screen and (max-width: 480px){
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 20px;
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
         font-size: 30px;
-     }
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 34px;
+     `}
 `;
 
 const Type = styled.button`
@@ -41,9 +60,22 @@ const Type = styled.button`
     font-weight: bold;
     background-color: white;
     border-radius: 20px;
-    @media only screen and (max-width: 480px){
-        display: none;
-     }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 12px;
+        margin: 2px;
+        padding: 3px;
+        border: none;
+        border: 1px solid crimson;
+     `}
+     ${MediaQueries('mobileM_min', 'mobileM_max')`
+        margin-top: 5px;
+        padding: 7px;
+     `}
+     ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 14px;
+        margin-top: 5px;
+        padding: 8px;
+     `}
 `;
 
 const List = styled.ul`
@@ -53,10 +85,18 @@ const List = styled.ul`
 
 const ListItem = styled.li`
     margin: 30px 0px;
-    @media only screen and (max-width: 480px){
-        margin: 10px;
-        font-size: 12px;
-     }
+     ${MediaQueries('mobileS_min', 'mobileS_max')`
+        margin: 5px;
+        font-size: 13px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        margin: 9px;
+        font-size: 13px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        margin: 9px;
+        font-size: 15px;
+    `}
 `;
 
 const Button = styled.button`
@@ -64,21 +104,19 @@ const Button = styled.button`
     background-color: #800080;
     color: white;
     font-size: 16px;
-    font-weight: bold;
     padding: 15px;
-    border-radius: 10px;
-    @media only screen and (max-width: 480px){
-        font-size: 12px;
-        padding: 10px;
-     }
+    border-radius: 20px;
+    @media only screen and (max-width: 767px){
+        display: none;
+    }
 `;
 
 const PriceCard = ({price, type, customNumber, discount}) => {
 
-    const buttonRef = useState();
+    const buttonRef = createRef();
 
     useEffect(() => {
-        if (window.screen.width <= 480){
+        if (window.screen.width <= 350){
             buttonRef.current.style.display = "none";
         }
     })
@@ -100,4 +138,4 @@ const PriceCard = ({price, type, customNumber, discount}) => {
     )
 }
 
-export default PriceCard
+export default PriceCard;
