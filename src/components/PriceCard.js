@@ -1,4 +1,4 @@
-import React, {createRef, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { MediaQueries } from './MediaQueries';
 
@@ -16,7 +16,7 @@ const Container = styled.div`
     ${MediaQueries('mobileS_min', 'mobileS_max')`
         height: max-content;
         margin-right: 0; 
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         padding: 10px;
      `}
      ${MediaQueries('mobileM_min', 'mobileM_max')`
@@ -28,9 +28,15 @@ const Container = styled.div`
      ${MediaQueries('mobileL_min', 'mobileL_max')`
         height: max-content;
         margin-right: 0; 
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         padding: 10px;
      `}
+     ${MediaQueries('tablet_min', 'tablet_max')`
+     height: max-content;
+     margin-right: 10px;
+     margin-bottom: 10px;
+     padding: 10px;
+    `}
 `;
 
 const PriceContainer = styled.div`
@@ -42,7 +48,7 @@ const Price = styled.span`
     font-weight: bold;
     font-size: 50px;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
-        font-size: 20px;
+        font-size: 30px;
      `}
      ${MediaQueries('mobileM_min', 'mobileM_max')`
         font-size: 30px;
@@ -55,25 +61,27 @@ const Price = styled.span`
 const Type = styled.button`
     padding: 10px;
     margin: 10px 0px;
+    font-size: 1em;
     border: 2px solid crimson;
     color: crimson;
     font-weight: bold;
     background-color: white;
     border-radius: 20px;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
-        font-size: 12px;
-        margin: 2px;
-        padding: 3px;
+        font-size: 14px;
+        margin: 5px;
+        padding: 7px;
         border: none;
         border: 1px solid crimson;
      `}
      ${MediaQueries('mobileM_min', 'mobileM_max')`
-        margin-top: 5px;
-        padding: 7px;
+        font-size: 14px
+        margin-top: 7px;
+        padding: 10px;
      `}
      ${MediaQueries('mobileL_min', 'mobileL_max')`
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 15px;
+        margin-top: 10px;
         padding: 8px;
      `}
 `;
@@ -86,16 +94,16 @@ const List = styled.ul`
 const ListItem = styled.li`
     margin: 30px 0px;
      ${MediaQueries('mobileS_min', 'mobileS_max')`
-        margin: 5px;
-        font-size: 13px;
+        margin: 16px 5px 16px 0px;
+        font-size: 14px;
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
-        margin: 9px;
-        font-size: 13px;
+        margin: 19px 8px 19px 0px;
+        font-size: 15px;
     `}
     ${MediaQueries('mobileL_min', 'mobileL_max')`
-        margin: 9px;
-        font-size: 15px;
+        margin: 22px 10px 22px 0px;
+        font-size: 1em;
     `}
 `;
 
@@ -103,23 +111,24 @@ const Button = styled.button`
     border: none;
     background-color: #800080;
     color: white;
-    font-size: 16px;
-    padding: 15px;
+    font-size: 15px;
+    padding: 12px 18px;
     border-radius: 20px;
-    @media only screen and (max-width: 767px){
-        display: none;
-    }
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
+        font-size: 14px;
+        padding: 8px 12px;
+    `}
+    ${MediaQueries('mobileM_min', 'mobileM_max')`
+        font-size: 15px;
+        padding: 8px 12px;
+    `}
+    ${MediaQueries('mobileL_min', 'mobileL_max')`
+        font-size: 1em;
+        padding: 12px 15px;
+    `}
 `;
 
 const PriceCard = ({price, type, customNumber, discount}) => {
-
-    const buttonRef = createRef();
-
-    useEffect(() => {
-        if (window.screen.width <= 350){
-            buttonRef.current.style.display = "none";
-        }
-    })
 
     return (
         <Container>
@@ -133,7 +142,7 @@ const PriceCard = ({price, type, customNumber, discount}) => {
                     <ListItem>{discount} discount on bulk orders</ListItem>
                     <ListItem>Access to all resources</ListItem> {''}
                 </List>
-                <Button ref={buttonRef}>Join Now</Button>
+                <Button>Join Now</Button>
         </Container>
     )
 }

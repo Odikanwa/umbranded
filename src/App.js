@@ -10,6 +10,7 @@ import Flyer from "./components/Flyer";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Promotionals from "./components/Promotionals";
+import {MediaQueries} from "./components/MediaQueries"
 
 const Container = styled.div`
     height: auto;
@@ -42,9 +43,8 @@ const IntoShapeCrimson = styled.div`
     clip-path: circle(42.4% at 15% 40%);
     background-color: crimson !important;
     z-index: 10;
-    @media only screen and (max-width: 767px){
-      clip-path: circle(52% at 4% 52%);
-      
+    @media only screen and (max-width: 1100px){
+      clip-path: circle(52% at 4% 52%);    
   }
 `;
 

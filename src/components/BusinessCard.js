@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Card4 from '../img/Card4.png'
 import Carousel from './Carousel'
@@ -6,12 +6,15 @@ import { MediaQueries } from './MediaQueries'
 
 
 const Container = styled.div`
-    height: auto;
-    margin-top: 0vw;
+    height: 100vh;
     display: flex;
-    height: max-content;
+    padding-right: 4%;
     @media only screen and (max-width: 767px){
+        height: auto;
         flex-direction: column;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1100px){
+        height: auto;
     }
 `;
 
@@ -27,7 +30,7 @@ const Image = styled.img`
     width: 90%;
     height: 90%;
     padding-top: 10px;
-    margin-left: 100px;
+    margin-left: 5%;
 
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     margin-left: 30px;
@@ -40,6 +43,11 @@ const Image = styled.img`
     ${MediaQueries('mobileL_min', 'mobileL_max')`
     margin-left: 30px;
     padding-top: 1px;
+    `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    margin-top: 20%;
+    margin-left: 2%;
+    height: 70%;
     `}
     
 `;
@@ -138,14 +146,6 @@ const Button = styled.button`
 // `;
 
 const BusinessCard = (props) => {
-    
-    const cardRef = createRef();
-
-    useEffect(() => {
-        if (window.screen.width <= 340){
-            cardRef.current.style.display = "none";
-        }
-    })
 
     return (
         <Container>
@@ -165,7 +165,7 @@ const BusinessCard = (props) => {
                     <Desc>
                         You can check out our collection for inspiration.
                     </Desc>
-                    <CardContainer ref={cardRef}>
+                    <CardContainer>
                         <Carousel/>
                     </CardContainer>
                     <Button>Explore All</Button>

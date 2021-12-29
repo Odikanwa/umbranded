@@ -7,11 +7,15 @@ import twitter from '../img/twitter.png'
 import { MediaQueries } from './MediaQueries'
 
 const Container = styled.div`
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column; 
-    @media only screen and (max-width: 767px){
-        flex-direction: column;
+    @media only screen and (max-width: 800px) and (orientation: landscape){
+            height: auto;
+    }
+    @media only screen and (min-width: 1024px) and (max-width: 1100px) {
+        padding-top: 50px;
+        height: auto;
     }
 `;
 
@@ -21,7 +25,7 @@ const Wrapper1 = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 800px){
         flex-wrap: wrap;
         align-items: stretch;
     }
@@ -34,7 +38,7 @@ const Wrapper2 = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: black; 
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 800px){
         flex-direction: column;
     }
 `;
@@ -47,7 +51,7 @@ const Column = styled.div`
     align-items: left;
     justify-content: center;
     flex-direction: column; 
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 800px){
         width: 48%;
     }  
 `;
@@ -59,7 +63,7 @@ const Column2 = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 800px){
         width: 100%;
     }
 `;
@@ -70,7 +74,8 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.div`
-    margin: 20px 0px;
+    font-size: 1em;
+    margin: 30px 0px;
     flex-direction: column;
 
      ${MediaQueries('mobileS_min', 'mobileS_max')`
@@ -85,11 +90,18 @@ const ListItem = styled.div`
      margin: 8px 0px;
      font-size: 1em;
     `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+     margin: 18px 0px;
+     font-size: 1em;
+    `}
+    @media only screen and (max-width: 900px) and (orientation: landscape){
+        font-size: 13px;
+ }
 `;
 
 const Header = styled.span`
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
 
      ${MediaQueries('mobileS_min', 'mobileS_max')`
@@ -101,6 +113,12 @@ const Header = styled.span`
     ${MediaQueries('mobileL_min', 'mobileL_max')`
      font-size: 25px;
     `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+     font-size: 30px;
+    `}
+    @media only screen and (max-width: 900px) and (orientation: landscape){
+       font-size: 25px;
+}
      
 `;
 
@@ -120,11 +138,11 @@ const Footer = () => {
     const handlesRef = useRef();
 
     useEffect(() =>{
-        if (window.screen.width <= 767){
+        if (window.screen.width <= 800){
             footerIconsRef.current.style.display = "none";
             langRef.current.style.display = "none";
         }
-        if (window.screen.width >= 768){
+        if (window.screen.width >= 800){
             handlesRef.current.style.display = "none";
         }
     })

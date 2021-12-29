@@ -1,28 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import PriceCard from './PriceCard';
-import { MediaQueries } from './MediaQueries';
+import {MediaQueries} from './MediaQueries'
 
 const Container = styled.div`
-    height: auto;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 480px){
+
+    @media only screen and (max-width: 767px){
+    height: auto;
     flex-direction: column;
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
      }
-     ${MediaQueries('mobileS_min', 'mobileS_max')`
-     flex-direction: column;
+     ${MediaQueries('tablet_min', 'tablet_max')`s
+     margin-left: 5%;
     `}
-    ${MediaQueries('mobileM_min', 'mobileM_max')`
-    flex-direction: column;
-    padding-top: 5px;
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    flex-direction: column;
-    padding-top: 5px;
-    `}
+    @media only screen and (min-width: 767px) and (max-width: 1100px) {
+        height: auto;
+        margin: 10% 4% 10% 5%;
+    }
 `;
 
 const Price = () => {

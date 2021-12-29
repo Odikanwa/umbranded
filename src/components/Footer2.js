@@ -9,9 +9,6 @@ const Container = styled.div`
     height: 50%;
     display: flex;
     flex-direction: column; 
-    @media only screen and (max-width: 480px){
-        flex-direction: column;
-     }
 `;
 
 const Wrapper2 = styled.div`
@@ -21,9 +18,10 @@ const Wrapper2 = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: black;
-    flex-direction: column; @media only screen and (max-width: 480px){
+    flex-direction: column; 
+    @media only screen and (max-width: 480px){
         flex-direction: column;
-        height: 30%
+        height: 30%;
      }
 `;
 

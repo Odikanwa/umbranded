@@ -1,22 +1,28 @@
-import React, {useEffect, createRef} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import flyer from '../img/flyer5.jpg'
 import {MediaQueries} from './MediaQueries'
 
 const Container = styled.div`
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: row;
+    margin-right: 4%;
+    margin-left: 5%;
     @media only screen and (max-width: 767px){
+        height: auto;
         flex-direction: column;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1100px){
+        height: auto;
     }
 `;
 
 const Left = styled.div`
     width: 50%;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
-        width: 90%;
-        height: 30%;
+        width: 100%;
+        height: 15em;
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     width: 100%;
@@ -73,17 +79,17 @@ const Right = styled.div`
 `;
 
 const Image = styled.img`
-    width: 80%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     padding-top: 10px;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 10%;
 
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     height: 90%;
-    width: 100%;
+    width: 90%;
     margin-top: 3%;
-    margin-left: 20px;  
+    margin-left: 5%;  
     `}
 
     ${MediaQueries('mobileM_min', 'mobileM_max')`
@@ -97,6 +103,14 @@ const Image = styled.img`
     width: 90%;
     margin-top: 3%;
     margin-left: 20px; 
+    `}
+    
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    width: 90%;
+    height: 45%;
+    margin-top: 3%; 
+    margin-left: 0px;
+    margin-top: 20%;
     `}
 `;
 
@@ -129,17 +143,9 @@ const Button = styled.button`
 `;
 
 const Flyer = () => {
-
-    const imageRef = createRef();
-    useEffect(() => {
-        if (window.screen.width <= 340){
-            imageRef.current.style.display = "none";
-        }
-    })
-
     return (
         <Container>
-            <Left ref={imageRef}><Image src={flyer}/></Left>
+            <Left><Image src={flyer}/></Left>
             <Right>
             <Wrapper>
                     <Title>Let's Fly the Word!</Title>

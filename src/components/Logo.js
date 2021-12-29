@@ -4,12 +4,21 @@ import Splash5 from '../img/Splash5.jpg'
 import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
-    height: auto;
+    height: 100vh;
     display: flex;
     background-color: #000000;
+    padding-right: 4%;
     @media only screen and (max-width: 767px){
+        height: 100vh;
         flex-direction: column;
         padding: 30px 20px;
+        border-top: 0.3px solid #bfbfbf;
+    }
+    @media only screen and (max-width: 900px) and (orientation: landscape){
+        height: auto;
+        padding-bottom: 20px;
+    }
+    @media only screen and (min-width:768px) and (max-width:1100px){
         border-top: 0.3px solid #bfbfbf;
     }
 `;
@@ -17,7 +26,8 @@ const Container = styled.div`
 const Left = styled.div`
     width: 50%;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
-        display: none;
+        width: 100%;
+        height: 35%;
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     width: 100%;
@@ -29,6 +39,12 @@ const Left = styled.div`
     height: 35%;
         align-items: center;
     `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    `}
 `;
 
 const Image = styled.img`
@@ -37,6 +53,16 @@ const Image = styled.img`
     ${MediaQueries('mobileM_min', 'mobileM_max')`
         align-self: center;
     `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    margin-top: 30%;
+        align-self: center;
+        height: 60%;
+    `}
+    @media only screen and (min-width:768px) and (max-width:1100px){
+        margin-top: 30%;
+        align-self: center;
+        height: 60%;
+    }
 `;
 
 const Right = styled.div`
@@ -69,26 +95,12 @@ const Title = styled.span`
     margin-top: 20px;
     margin-botttom: 0px;
     `}
-    ${MediaQueries('tablet_min', 'tablet_max')`
-    
-    `}
-    ${MediaQueries('laptop_min', 'laptop_max')`
-    
-    `}
-    ${MediaQueries('laptopL_min', 'laptopL_max')`
-    
-    `}
-    ${MediaQueries('desktop')`
-    
-    `}
-`;
-// const SubTitle = styled.span`
-//     font-size: 24px;
-//     font-style: italic;
-//     color: #333;
-//     margin-top: 30px;
-// `;
-
+    @media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape){
+        font-size: 38px;
+        padding-top: 20px;
+    }
+    `;
+ 
 const Desc = styled.p`
     font-size: 20px;
     color:  #bfbfbf;

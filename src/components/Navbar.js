@@ -21,7 +21,7 @@ const Left = styled.div`
 `;
 
 const Logo = styled.div`
-    font-size: 35px; 
+    font-size: 30px; 
     font-weight: bold;
     z-index: 99;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
@@ -33,17 +33,8 @@ const Logo = styled.div`
     ${MediaQueries('mobileL_min', 'mobileL_max')`
     font-size: 22px;
     `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    font-size: 27px;
     `}
 `;
 
@@ -74,38 +65,26 @@ const Menu = styled.ul`
     ${MediaQueries('mobileL_min', 'mobileL_max')`
     display: none;
     `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
 `;
 const MenuItemWhite = styled.li`
-    margin-right: 30px;
-    font-size: 20px;
+    margin-right: 35px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     &:hover{
         text-decoration: underline;
-        text-underline-offset: 2px;
+        text-underline-offset: 3px;
     }
 `;
 
 const MenuItemCrimson = styled.li`
-    margin-right: 30px;
-    font-size: 20px;
+    margin-right: 35px;
+    font-size: 18px;
     font-weight: bold;
     color: crimson;
     &:hover{
         text-decoration: underline;
-        text-underline-offset: 2px;
+        text-underline-offset: 3px;
     }
 `;
 
@@ -133,17 +112,8 @@ const Button = styled.button`
     font-size: 1em;
     padding: 9px;
     `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    
+    ${MediaQueries('tablet_min', 'desktop')`
+    display: none;
     `}
 `;
 const Navbar = (props) => {

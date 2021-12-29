@@ -9,21 +9,11 @@ const Container = styled.div`
     display: flex;
     padding: 20px 20px 0px 20px;
 
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 900px) and (orientation: landscape){
+        height: auto;
         flex-direction: column;
-        @media only screen and (orientation: landscape){
-            height: auto;
-        }
+        padding-bottom: 20px;
     }
-    ${MediaQueries('mobileS_min', 'mobileS_max')`
-    flex-direction: column;
-    `}
-    ${MediaQueries('mobileM_min', 'mobileM_max')`
-    flex-direction: column;
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-    flex-direction: column;
-    `}
 `;
 const Left = styled.div`
     width: 60%;
@@ -58,17 +48,25 @@ const Title = styled.h1`
     margin-right: 30%;
     `}
     ${MediaQueries('tablet_min', 'tablet_max')`
-    
+    width: 70%;
+    font-size: 60px;
+    margin-left: 10%;
     `}
-    ${MediaQueries('laptop_min', 'laptop_max')`
-    
-    `}
-    ${MediaQueries('laptopL_min', 'laptopL_max')`
-    
-    `}
-    ${MediaQueries('desktop')`
-    
-    `}
+    @media only screen and (min-width: 1024px) and (max-width: 1100px){
+    width: 70%;
+    }
+    @media only screen and (max-width: 800px) and (orientation: landscape){
+        width: 45%;
+        margin-top: 20px;
+        margin-right: 55%;
+        font-size: 35px;
+    }
+    @media only screen and (min-width: 801px) and (max-width: 900px) and (orientation: landscape){
+        width: 50%;
+        margin-top: 40px;
+        margin-right: 40%;
+        font-size: 40px;
+    }
     
 `;
 
@@ -84,34 +82,36 @@ const Desc = styled.p`
     z-index: 99;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     width: 65%;
-    color: #e6e6e6;
     font-size: 15px;
     margin-right: 40% 
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     width: 75%;
-    color: #e6e6e6;
     font-size: 1em;
     margin-right: 25%;
     `}
     ${MediaQueries('mobileL_min', 'mobileL_max')`
     width: 65%;
-    color: #e6e6e6;
     font-size: 18px;
     margin-right: 35%
     `}
     ${MediaQueries('tablet_min', 'tablet_max')`
-    
+    width: 70%;
+    font-size: 18px;
+    margin-left: 10%
     `}
-    ${MediaQueries('laptop_min', 'laptop_max')`
-    
-    `}
-    ${MediaQueries('laptopL_min', 'laptopL_max')`
-    
-    `}
-    ${MediaQueries('desktop')`
-    
-    `}
+    @media only screen and (min-width: 1024px) and (max-width: 1100px){
+        width: 70%;
+        margin-left: 
+        }
+        @media only screen and (max-width: 800px) and (orientation: landscape){
+            width: 45%;
+            margin-right: 55%;
+        }
+        @media only screen and (min-width: 801px) and (max-width: 900px) and (orientation: landscape){
+            width: 50%;
+            margin-right: 40%;
+        }
     
 `;
 
@@ -128,11 +128,12 @@ const Info = styled.div`
 `;
 
 const Button = styled.button`
-    padding: 15px;
     background-color:  #800080;
     color: white;
     border-radius: 20px;
+    font-size: 1em;
     font-weight: bold;
+    padding: 15px 25px;
     border: none;
     letter-spacing: 2px;
     cursor: pointer;
@@ -152,16 +153,20 @@ const Button = styled.button`
         margin-bottom: 30px;
         padding: 15px 25px;
     `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+        font-size: 20px;
+        padding: 15px 28px;
+    `}
+    @media only screen and (min-width: 1024px) and (max-width: 1100px){
+        font-size: 20px;
+        padding: 15px 35px; 
+        }
 `;
 
 const Right = styled.div`
-    height: 40%;
-    @media only screen and (max-width: 767px){
+    @media only screen and (max-width: 1100px){
         display: none; 
     }
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-
-    `}
 `;
 
 const Image = styled.img`
@@ -173,7 +178,7 @@ const Intro = () => {
         <Container>
             <Left>
                 <Title>Xplore the <Unfamiliar>unfamiliar</Unfamiliar></Title>
-                <Desc> We believe that audaciously umsplashing one's biased imagination is the key to
+                <Desc> We believe that a vicious umsplashing of one's biased imagination is the key to
                     uniquely umbranding one in the growing sea of creatives. Be original!
                 </Desc>
                 <Info>

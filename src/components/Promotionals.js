@@ -4,18 +4,19 @@ import promotionalImg from '../img/promotional.png'
 import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: row;
-    ${MediaQueries('mobileS_min', 'mobileS_max')`
-        flex-direction: column;
-    `}
-    ${MediaQueries('mobileM_min', 'mobileM_max')`
+    margin-left: 5%;
+    margin-right: 4%;
+    @media only screen and (max-width: 767px){
+        height: auto;
         flex-direction: column-reverse;
-    `}
-    ${MediaQueries('mobileL_min', 'mobileL_max')`
-        flex-direction: column-reverse;
-    `}
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1100px){
+        height: auto;
+    }
+    
 `;
 
 const Left = styled.div`
@@ -37,6 +38,9 @@ const Wrapper = styled.div`
     `}
     ${MediaQueries('mobileL_min', 'mobileL_max')`
         padding: 20px;
+    `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+        padding: 30px 10px 30px 0px;
     `}
 `;
 
@@ -71,7 +75,7 @@ const Desc = styled.p`
 const Right = styled.div`
     width: 55%;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
-        display: none;
+        width: 100%;
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     width: 100%;
@@ -95,6 +99,11 @@ const Image = styled.img`
     height: 90%;
     width: 100%;
     margin-top: 20px;
+    `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    width: 100%;
+    height: 70%;
+    margin-top: 20%;
     `}
 `;
 
