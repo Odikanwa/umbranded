@@ -10,7 +10,6 @@ import Flyer from "./components/Flyer";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Promotionals from "./components/Promotionals";
-import {MediaQueries} from "./components/MediaQueries"
 
 const Container = styled.div`
     height: auto;
