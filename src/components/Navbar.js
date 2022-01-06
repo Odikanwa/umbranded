@@ -92,7 +92,7 @@ const Menu = styled.ul`
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0px;
-    margin-top: 10%;
+    margin-top: 0;
     z-index: 100;
     `}
 `;
@@ -107,7 +107,7 @@ const Desc = styled.div`
 `;
 
 const Avatar = styled.img`
-    height: 80px;
+    height: 100px;
 `;
 
 const Text1 = styled.p`
