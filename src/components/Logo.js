@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import styled from 'styled-components'
 import Splash5 from '../img/Splash5.jpg'
 import { MediaQueries } from './MediaQueries';
@@ -75,25 +75,28 @@ const Right = styled.div`
     }
 `;
 
-const Title = styled.span`
-    font-size: 70px;
+const Title = styled.h1`
+    font-size: 50px;
     color: white;
-    @media only screen and (max-width: 480px){
-        font-size: 25px;
-    }
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     font-size: 20px;
-    margin-bottom: 0px;
+    margin-top: 10%;
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     font-size: 25px;
-    margin-top: 20px;
+    margin-top: 10%;
     margin-botttom: 0px;
     `}
     ${MediaQueries('mobileL_min', 'mobileL_max')`
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 10%;
     margin-botttom: 0px;
+    `}
+    ${MediaQueries('tablet_min', 'tablet_max')`
+    font-size: 35px;
+    `}
+    ${MediaQueries('laptop_min', 'laptop_max')`
+    font-size: 40px;
     `}
     @media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape){
         font-size: 38px;
@@ -143,8 +146,19 @@ const Button = styled.button`
 `;
 
 const Logo = () => {
+
+    const containerRef = useRef ();
+
+    useEffect(() =>{
+        if (window.screen.height <= 480){
+            containerRef.current.style.height = "auto";
+        }else if (window.screen.height >= 481) {
+            containerRef.current.style.height = "100vh"
+        }
+    });
+
     return (
-        <Container>
+        <Container ref={containerRef}>
             <Left><Image src={Splash5}/></Left>
             <Right>
                 <Title>

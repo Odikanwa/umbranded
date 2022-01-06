@@ -66,6 +66,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
+    font-size: 50px;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     font-size: 20px;
 `}
@@ -75,6 +76,12 @@ const Title = styled.h1`
 ${MediaQueries('mobileM_min', 'mobileM_max')`
     font-size: 30px;
 `}
+${MediaQueries('tablet_min', 'tablet_max')`
+    font-size: 35px;
+    `}
+    ${MediaQueries('laptop_min', 'laptop_max')`
+    font-size: 40px;
+    `}
 `;
 
 const Desc = styled.p`

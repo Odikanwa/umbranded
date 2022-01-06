@@ -230,22 +230,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
-
-//Footer Content
-
-//Xplore -- Logo , Business Card, Posters, Flyers --
-//Promotionals -- Place Order, Check Orders, Cancel Orders, Return Parcel
-//Learn -- Color Arts, Design Elements, Templates, Photo Editing, Website branding
-//Resources -- Color wheel, Palette generator, Font blend, Icon maker, Text Styler,
-//Support --- About, Community, Privacy policy, Terms of Service 
-
-//Smaller Footer
-//GlobeIcon, English (US) -------(C)2021, All rights reserved, Umbranded -----Icons
-
-// Personal Protection Items(Umbrella, maks, outwear), Stress Balls, Tote Bags, Pens, Water bottles/Drinkware
-     // Coffee Mugs, Koozies, T-shirts, Mobile Accessories(usb, chargers), Keychains, desk accessories
-//To achieve height alignment for wrapper 1:
-// flex-direction: wow
-// align-items: left;
-// justify-content: space-between;`;
+export default Footer;

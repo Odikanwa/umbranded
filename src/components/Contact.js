@@ -84,6 +84,7 @@ const Title = styled.h1`
     z-index: 99;
     margin-top: 5%;
     margin-bottom: 10%;
+    font-size: 40px;
      ${MediaQueries('mobileS_min', 'mobileS_max')`
      margin-bottom: 10px;
      font-size: 20px;
@@ -99,6 +100,9 @@ const Title = styled.h1`
     ${MediaQueries('tablet_min', 'tablet_max')`
     margin-bottom: 40px;
     font-size: 35px;
+    `}
+    ${MediaQueries('laptop_min', 'laptop_max')`
+    font-size: 40px;
     `}
 `;
 

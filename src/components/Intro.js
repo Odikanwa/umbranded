@@ -5,7 +5,7 @@ import AnimatedShapes from './AnimatedShapes';
 import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
-    height: calc(100vh - 50px);
+    height: 100vh;
     display: flex;
     padding: 20px 20px 0px 20px;
 

@@ -1,3 +1,4 @@
+import React, { useState, createContext,useRef, useEffect} from 'react';
 import styled, { css } from "styled-components";
 import Logo from "./components/Logo";
 import Intro from "./components/Intro";
@@ -10,6 +11,7 @@ import Flyer from "./components/Flyer";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Promotionals from "./components/Promotionals";
+
 
 const Container = styled.div`
     height: auto;
@@ -32,8 +34,7 @@ const IntoShapeBlack = styled.div`
     background-color: black;
     z-index: -1;
     @media only screen and (max-width: 480px){
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);    
   }
 `;
 
@@ -87,19 +88,36 @@ const FooterShapeBlack = styled.div`
       clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
    }
 `;
-
+export const NavContext = createContext();
 function App() {
+  
+    const [open, setOpen] = useState(true);
+    const appRef = useRef();
+    const introRef = useRef();
 
-  //const smallScreen = window.screen.height <= 480 ? true : false;
-  return (
-    
+    useEffect(() => {
+      if(open === true){
+        introRef.current.style.filter = 'opacity(1)';
+        appRef.current.style.filter = 'opacity(1)';
+      }else {
+        introRef.current.style.filter = 'opacity(70%)';
+        appRef.current.style.filter = 'opacity(70%)';
+      }
+    });
+
+  return ( 
     <>
-    <Container>
+    <NavContext.Provider value={{open, setOpen}}>
+    <Container >
       <Navbar/>
-      <Intro/>
-      <IntoShapeBlack/>
-      <IntoShapeCrimson/>
+      <Container ref={introRef}>
+      <Intro />
+      <IntoShapeBlack />
+      <IntoShapeCrimson />
+      </Container>
     </Container>
+    </NavContext.Provider>
+    <Container ref={appRef}>
     <Container>
       <Logo/>
     </Container> 
@@ -125,6 +143,7 @@ function App() {
       <Footer/>
       <FooterShapeCrimson/>
       <FooterShapeBlack/>
+    </Container>
     </Container>
     </>
       
