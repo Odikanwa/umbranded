@@ -118,7 +118,7 @@ const Text1 = styled.p`
 const Text2 = styled.p`
     font-size: 1em;
     color: #ffe6ff;
-    margin-top: 10px;
+    margin-top: 5px;
 `;
 
 const MenuItem = styled.li`
