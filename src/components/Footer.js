@@ -77,7 +77,6 @@ const ListItem = styled.div`
     font-size: 1em;
     margin: 30px 0px;
     flex-direction: column;
-
      ${MediaQueries('mobileS_min', 'mobileS_max')`
      margin: 8px 0px;
      font-size: 12px;
@@ -104,7 +103,7 @@ const Header = styled.span`
     font-size: 26px;
     font-weight: bold;
 
-     ${MediaQueries('mobileS_min', 'mobileS_max')`
+    ${MediaQueries('mobileS_min', 'mobileS_max')`
      font-size: 18px;
     `}
     ${MediaQueries('mobileM_min', 'mobileM_max')`
@@ -130,14 +129,13 @@ const Icons = styled.img`
     vertical-align: middle;
 `;
 
-
 const Footer = () => {
 
     const footerIconsRef = useRef ();
     const langRef = useRef();
     const handlesRef = useRef();
 
-    useEffect(() =>{
+    useEffect(() => {
         if (window.screen.width <= 800){
             footerIconsRef.current.style.display = "none";
             langRef.current.style.display = "none";

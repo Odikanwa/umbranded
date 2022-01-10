@@ -14,14 +14,17 @@ import { NavContext } from '../App';
 const Container = styled.div`
     height: 50px;
     width: 100vw;
-    background-color: black;
     position: fixed;
+    background-color: black;
     top: 0;
     left: 0;
     z-index: 2500;
     ${MediaQueries('tablet_min', 'desktop')`
     background-color: transparent;
-    `}
+    &:active{
+        background-color: black;
+    }
+    `} 
 `;
 const Wrapper = styled.div`
     padding: 10px 20px;
@@ -75,7 +78,7 @@ const Randed = styled.span`
 
 const Menu = styled.ul`
     display: flex;
-    flex-flow: row;
+    flex-flow: row nowrap;
     list-style: none;
     z-index: 99;
     width: 100%;
@@ -109,7 +112,6 @@ const Desc = styled.div`
 const Avatar = styled.img`
     height: 100px;
 `;
-
 const Text1 = styled.p`
     font-size: 1em;
     color: #ffe6ff;
@@ -180,10 +182,11 @@ ${MediaQueries('tablet_min', 'desktop')`
 
 const Navbar = () => {
 
-  const value = useContext(NavContext)
+  const value = useContext(NavContext);
 
   const buttonRef = useRef();
   const menuRef = useRef();
+  const navContainerRef = useRef();
   //const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -200,10 +203,12 @@ const Navbar = () => {
     };
   }
 
+  
+  //Custom hook for closing mobile nav dropdown menu on click ouside the menu
   const useOnClickOutside = (menuRef, handler) => {
       useEffect(() => {
           const listener = (event) => {
-              // Do nothing if clicking ref's element or descendant elements
+              //Do nothing if clicking ref's element or descendant elements    
               if(!menuRef.current || menuRef.current.contains(event.target)){
                   return;
               }else{
@@ -211,24 +216,51 @@ const Navbar = () => {
                 menuRef.current.style.display = 'none';
                 buttonRef.current.style.display = 'inline-block'
               }
+              //Keep menu fixed for tablet devices
+              if (window.screen.width > 767){
+                buttonRef.current.style.display = 'none';
+                menuRef.current.style.display = 'inline-flex';
+            };
               handler(event);
           };
           //document.addEventListener("mousedown", listener);
           document.addEventListener("touchstart", listener);
-
           return () => {
               //document.removeEventListener("mousedown", listener);
               document.removeEventListener("touchstart", listener);
-          };
+          };     
       },
       [menuRef, handler]
       );
   }
-
+  //call onclickOutside hook
   useOnClickOutside(menuRef, () => value.setOpen(true));
 
+  //custom hook for to change nav color on scroll
+  const useOnScroll = (navContainerRef, handler) => {
+  useEffect(() => {
+      const listener = (event) => {
+        if(window.scrollY >= 50){
+            navContainerRef.current.style.backgroundColor = 'black';
+        }else{
+            navContainerRef.current.style.backgroundColor = 'transparent';
+        };
+        handler(event);
+      };
+      window.addEventListener('scroll', listener);
+      return () =>{
+          window.removeEventListener('scroll', listener)
+      };
+  }, [navContainerRef, handler]
+  );
+}
+//Call onscroll hook
+useOnScroll(navContainerRef, () => value.setOpen(true));
+ 
+
+
     return (
-        <Container>
+        <Container ref={navContainerRef}>
             <Wrapper>
                 <Left>
                     <Logo><Umb>Umb</Umb><Randed>randed</Randed></Logo>
