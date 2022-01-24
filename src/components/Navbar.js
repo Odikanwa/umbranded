@@ -1,15 +1,16 @@
-import React, { useRef, useEffect, useContext} from 'react'
+import React, { useRef, useEffect, useContext, useState} from 'react'
 import styled from 'styled-components'
+import { NavLink} from 'react-router-dom'
 import menuIcon from '../img/menu24.png'
 import homeIcon from '../img/homeIcon.png'
 import logoIcon from '../img/logoIcon.png'
 import cardIcon from '../img/cardIcon.png'
 import promoIcon from '../img/promoIcon.png'
 import flyerIcon from '../img/flyerIcon.png'
-import loginIcon from '../img/loginIcon.png'
-import avatarIcon from '../img/avatarIcon.png'
+import loginIcon from '../img/loginIcon.png';
+import avatarIcon from '../img/avatarIcon.png';
 import { MediaQueries } from './MediaQueries';
-import { NavContext } from '../App';
+import { NavContext } from './Home';
 
 const Container = styled.div`
     height: 50px;
@@ -127,22 +128,39 @@ const MenuItem = styled.li`
     margin-right: 40px;
     font-size: 1em;
     color: #ffe6ff;
-    &:hover{
-        text-decoration: 3px underline;
+    cursor: pointer;
+    &:hover, &.active {
+        text-decoration: 1px underline;
         text-underline-offset: 3px;
     }
     ${MediaQueries('mobileS_min', 'mobileL_max')`
     color: black;
     width: 100%;
     padding: 5%;
-
-    &:hover{
+    &:hover, &.active{
         text-decoration: none;
         color: crimson;
         background-color: #e6e6e6;
         font-weight: bold;
     }
     `}    
+`;
+
+const MenuLink = styled(NavLink)`
+color: #ffe6ff;
+text-decoration: none;
+&.active{
+    text-decoration: 3px underline;
+    text-underline-offset: 3px;
+}
+${MediaQueries('mobileS_min', 'mobileL_max')`
+    color: black;
+    &:hover, &.active{
+        text-decoration: none;
+        color: crimson;
+        font-weight: bold;
+    }
+    `}
 `;
 
 const MenuButton = styled.button`
@@ -182,30 +200,32 @@ ${MediaQueries('tablet_min', 'desktop')`
 
 const Navbar = () => {
 
-  const value = useContext(NavContext);
+  //const {menuOpen, setMenuOpen} = useContext(NavContext);
+  //console.log(menuOpen);
+  //console.log(setMenuOpen);
 
   const buttonRef = useRef();
   const menuRef = useRef();
   const navContainerRef = useRef();
-  //const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    value.setOpen(!value.open)
+    setMenuOpen(!menuOpen)
     
-    if(value.open === true){
+    if(menuOpen === true){
         //value.blur();
         menuRef.current.style.display = 'block'
-        buttonRef.current.style.display = 'none'          
+        buttonRef.current.style.display = 'none'   
+              
     }else {
         //value.unBlur();
-        menuRef.current.style.display = 'none'
-        
+        menuRef.current.style.display = 'none' 
+        buttonRef.current.style.display = 'inline-block'
     };
-  }
+}
 
-  
   //Custom hook for closing mobile nav dropdown menu on click ouside the menu
-  const useOnClickOutside = (menuRef, handler) => {
+ const useOnClickOutside = (menuRef, handler) => {
       useEffect(() => {
           const listener = (event) => {
               //Do nothing if clicking ref's element or descendant elements    
@@ -214,7 +234,7 @@ const Navbar = () => {
               }else{
                 //exit menu
                 menuRef.current.style.display = 'none';
-                buttonRef.current.style.display = 'inline-block'
+                buttonRef.current.style.display = 'inline-block';
               }
               //Keep menu fixed for tablet devices
               if (window.screen.width > 767){
@@ -232,12 +252,12 @@ const Navbar = () => {
       },
       [menuRef, handler]
       );
-  }
+    }
   //call onclickOutside hook
-  useOnClickOutside(menuRef, () => value.setOpen(true));
+  useOnClickOutside(menuRef, () => setMenuOpen(true));
 
   //custom hook for to change nav color on scroll
-  const useOnScroll = (navContainerRef, handler) => {
+  //const useOnScroll = (navContainerRef, handler) => {
   useEffect(() => {
       const listener = (event) => {
         if(window.scrollY >= 50){
@@ -245,20 +265,17 @@ const Navbar = () => {
         }else{
             navContainerRef.current.style.backgroundColor = 'transparent';
         };
-        handler(event);
+         
+        //handler(event);
       };
       window.addEventListener('scroll', listener);
       return () =>{
           window.removeEventListener('scroll', listener)
       };
-  }, [navContainerRef, handler]
+  }, [navContainerRef]
   );
-}
 //Call onscroll hook
-useOnScroll(navContainerRef, () => value.setOpen(true));
- 
-
-
+//useOnScroll(navContainerRef, () => value.setOpen(true));
     return (
         <Container ref={navContainerRef}>
             <Wrapper>
@@ -270,12 +287,12 @@ useOnScroll(navContainerRef, () => value.setOpen(true));
                             <Text1><em>Hey, you are not signed in.</em></Text1>
                             <Text2><em>Plan: [None selected]</em></Text2>
                         </Desc>
-                        <MenuItem><MenuDropdownIcons src={homeIcon}/>Home</MenuItem>
-                        <MenuItem><MenuDropdownIcons src={logoIcon}/>Logo</MenuItem>
-                        <MenuItem><MenuDropdownIcons src={cardIcon}/>Cards</MenuItem>
-                        <MenuItem><MenuDropdownIcons src={promoIcon}/>Promotionals</MenuItem>
-                        <MenuItem><MenuDropdownIcons src={flyerIcon}/>Flyers</MenuItem>
-                        <MenuItem><MenuDropdownIcons src={loginIcon}/>Login</MenuItem>
+                        <MenuItem><MenuDropdownIcons src={homeIcon}/><MenuLink to='/'>Home</MenuLink></MenuItem>
+                        <MenuItem><MenuDropdownIcons src={logoIcon}/><MenuLink to='/logo'>Logo</MenuLink></MenuItem>
+                        <MenuItem><MenuDropdownIcons src={cardIcon}/><MenuLink to='/cards'>Cards</MenuLink></MenuItem>
+                        <MenuItem><MenuDropdownIcons src={promoIcon}/><MenuLink to='/promotionals'>Promotionals</MenuLink></MenuItem>
+                        <MenuItem><MenuDropdownIcons src={flyerIcon}/><MenuLink to='/flyers'>Flyers</MenuLink></MenuItem>
+                        <MenuItem><MenuDropdownIcons src={loginIcon}/><MenuLink to='/login'>Login</MenuLink></MenuItem>
                     </Menu>
                 </Left>
                 <MenuButton ref={buttonRef} onClick={toggleMenu}><MenuIcon src={menuIcon}/></MenuButton>
@@ -290,3 +307,4 @@ export default Navbar;
 //&:active{
   //  transform: translateY(4px);
 //}
+//[navContainerRef, handler]
