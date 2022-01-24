@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext, useState} from 'react'
+import React, { useRef, useEffect, useState} from 'react'
 import styled from 'styled-components'
 import { NavLink} from 'react-router-dom'
 import menuIcon from '../img/menu24.png'
@@ -10,7 +10,7 @@ import flyerIcon from '../img/flyerIcon.png'
 import loginIcon from '../img/loginIcon.png';
 import avatarIcon from '../img/avatarIcon.png';
 import { MediaQueries } from './MediaQueries';
-import { NavContext } from './Home';
+//import { NavContext } from './Home';
 
 const Container = styled.div`
     height: 50px;
