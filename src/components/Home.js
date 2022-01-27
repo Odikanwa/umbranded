@@ -1,4 +1,4 @@
-import React, { useState, createContext,useRef, useEffect} from 'react';
+import React, { useRef } from 'react';
 import styled, { css } from "styled-components";
 import Logo from "./Logo";
 import Intro from "./Intro";
@@ -88,37 +88,32 @@ export const FooterShapeBlack = styled.div`
       clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
    }
 `;
-export const NavContext = createContext({});
-
-// const NavProvider = ({children}) => {
-  
-//   const [menuOpen, setMenuOpen] = useState(true);
-//   return (
-//   <NavContext.Provider value={{menuOpen, setMenuOpen}}>
-//     {children}
-//   </NavContext.Provider>
-//   );
-// };
+//export const NavContext = createContext();
 
 const Home = () => {
+
   
-    const [menuOpen, setMenuOpen] = useState(true);
+    //const [menuOpen, setMenuOpen] = useState(true);
+
+
     const appRef = useRef();
     const introRef = useRef();
+    
 
-    useEffect(() => {
-      if(menuOpen === true){
-        introRef.current.style.filter = 'brightness(100%)';
-        appRef.current.style.filter = 'brightness(100%)';
-      }else {
-        introRef.current.style.filter = 'brightness(30%)';
-        appRef.current.style.filter = 'brightness(30%)';
-      }
-    }, [menuOpen]);
+    // useEffect(() => {
+
+    //   if(menuOpen === true){
+    //     introRef.current.style.filter = 'brightness(100%)';
+    //     appRef.current.style.filter = 'brightness(100%)';
+    //   }else {
+    //     introRef.current.style.filter = 'brightness(30%)';
+    //     appRef.current.style.filter = 'brightness(30%)';
+    //   }
+    // }
+    // );
 
   return ( 
     <>
-    <NavContext.Provider value={{menuOpen, setMenuOpen}}>
     <Container>
       <Navbar/>
       <Container ref={introRef}>
@@ -126,8 +121,8 @@ const Home = () => {
       <IntoShapeBlack />
       <IntoShapeCrimson />
       </Container>
-    </Container>
-    </NavContext.Provider>
+      </Container>
+      
     <Container ref={appRef}>
     <Container>
       <Logo/>

@@ -12,14 +12,11 @@ const Container = styled.div`
     position: relative;
 `;
 
-
 const Wrapper = styled.div`
     height: auto;
     overflow: hidden;
     position: relative;
 `;
-
-
 
 const Promotionals = () => {
     

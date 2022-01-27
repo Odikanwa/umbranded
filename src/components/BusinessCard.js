@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Card4 from '../img/Card4.png'
+import CardImg from '../img/Bcard1.jpg'
 import Carousel from './Carousel'
 import { MediaQueries } from './MediaQueries'
 
@@ -27,10 +27,10 @@ const Left = styled.div`
 `;
 
 const Image = styled.img`
-    width: 90%;
-    height: 90%;
-    padding-top: 10px;
-    margin-left: 5%;
+    width: 70%;
+    height: 70%;
+    margin-top: 10%;
+    margin-left: 20%;
 
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     margin-left: 30px;
@@ -156,7 +156,7 @@ const BusinessCard = (props) => {
 
     return (
         <Container>
-            <Left><Image src={Card4}/></Left>
+            <Left><Image src={CardImg}/></Left>
             <Right>
                 <Wrapper>
                     <Title>Need a Business Card?</Title>

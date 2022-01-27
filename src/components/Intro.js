@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Splash4 from '../img/Splash4.png'
+import HeroImage from '../img/heroImg.png'
 import AnimatedShapes from './AnimatedShapes';
 import { MediaQueries } from './MediaQueries';
 
@@ -171,6 +171,7 @@ const Right = styled.div`
 
 const Image = styled.img`
     width: 100%;
+    height: 100%;
 `;
 
 const Intro = () => {
@@ -179,13 +180,13 @@ const Intro = () => {
             <Left>
                 <Title>Xplore the <Unfamiliar>unfamiliar</Unfamiliar></Title>
                 <Desc> We believe that a vicious umsplashing of one's biased imagination is the key to
-                    uniquely umbranding one in the growing sea of creatives. Be original!
+                    umbranding one in the growing sea of creatives. Soit originale!
                 </Desc>
                 <Info>
                     <Button>START A DESIGN</Button>  
                 </Info>
             </Left>
-            <Right><Image src={Splash4}/></Right>
+            <Right><Image src={HeroImage}/></Right>
             <AnimatedShapes/>
         </Container>
     );

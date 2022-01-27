@@ -5,13 +5,13 @@ import minicard1 from '../img/minicard1.jpg'
 import minicard2 from '../img/minicard2.jpg'
 import minicard3 from '../img/minicard3.jpg'
 import minicard4 from '../img/minicard4.jpg'
-import minicard5 from '../img/minicard5.png'
+import minicard5 from '../img/minicard5.jpg'
 import minicard6 from '../img/minicard6.jpg'
 import minicard7 from '../img/minicard7.jpg'
 import minicard8 from '../img/minicard8.jpg'
 import minicard9 from '../img/minicard9.jpg'
-import minicard10 from '../img/minicard10.png'
-import minicard11 from '../img/minicard11.png'
+import minicard10 from '../img/minicard10.jpg'
+import minicard11 from '../img/minicard11.jpg'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { MediaQueries } from "./MediaQueries";

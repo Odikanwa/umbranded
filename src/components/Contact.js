@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import Contact_background from '../img/Contact_background5.png'
+import Contact_background from '../img/Contact_background.png'
 import address from '../img/address.png'
 import phone from '../img/phone2.png'
 import mail from '../img/mail.png'

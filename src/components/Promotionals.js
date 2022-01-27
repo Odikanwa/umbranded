@@ -94,8 +94,8 @@ const Right = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    height: 90%;
-    padding-top: 10px;
+    height: 70%;
+    margin-top: 10%;
     margin-right: 50px;
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     height: 90%;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import flyer from '../img/flyer5.jpg'
+import flyer from '../img/flyerImg.jpg'
 import {MediaQueries} from './MediaQueries'
 
 const Container = styled.div`
@@ -86,29 +86,28 @@ const Right = styled.div`
 `;
 
 const Image = styled.img`
-    width: 70%;
+    width: 80%;
     height: 70%;
-    padding-top: 10px;
-    margin-left: 50px;
-    margin-top: 10%;
+    margin-left: 10%;
+    margin-top: 12%;
 
     ${MediaQueries('mobileS_min', 'mobileS_max')`
     height: 90%;
     width: 90%;
-    margin-top: 3%;
+    margin-top: 4%;
     margin-left: 5%;  
     `}
 
     ${MediaQueries('mobileM_min', 'mobileM_max')`
     height: 15em;
     width: 90%;
-    margin-top: 3%;
+    margin-top: 4%;
     margin-left: 20px; 
     `}
     ${MediaQueries('mobileL_min', 'mobileL_max')`
     height: 92%;
     width: 90%;
-    margin-top: 3%;
+    margin-top: 4%;
     margin-left: 20px; 
     `}
     

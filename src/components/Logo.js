@@ -1,6 +1,6 @@
 import React, {useRef, useEffect} from 'react'
 import styled from 'styled-components'
-import Splash5 from '../img/Splash5.jpg'
+import LogoImage from '../img/logoImg.png'
 import { MediaQueries } from './MediaQueries';
 
 const Container = styled.div`
@@ -49,7 +49,9 @@ const Left = styled.div`
 
 const Image = styled.img`
     width: 90%;
-    height:100%;
+    height:90%;
+    margin-top: 5%;
+    vertical-align: middle;
     ${MediaQueries('mobileM_min', 'mobileM_max')`
         align-self: center;
     `}
@@ -159,7 +161,7 @@ const Logo = () => {
 
     return (
         <Container ref={containerRef}>
-            <Left><Image src={Splash5}/></Left>
+            <Left><Image src={LogoImage}/></Left>
             <Right>
                 <Title>
                     Create da Loggo!

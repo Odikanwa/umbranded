@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-export const NavContext = createContext()
+export const NavContext = createContext({});
 
 const NavProvider = ({children}) => {
   
