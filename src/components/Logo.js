@@ -9,7 +9,7 @@ const Container = styled.div`
     background-color: #000000;
     padding-right: 4%;
     @media only screen and (max-width: 767px){
-        height: 100vh;
+        auto;
         flex-direction: column;
         padding: 30px 20px;
         border-top: 0.3px solid #bfbfbf;
