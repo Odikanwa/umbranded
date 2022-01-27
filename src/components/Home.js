@@ -41,7 +41,7 @@ const IntoShapeBlack = styled.div`
 const IntoShapeCrimson = styled.div`
     ${Shape}
     clip-path: circle(42.4% at 15% 40%);
-    background-color: crimson !important;
+    background-color: #dc143c !important;
     z-index: 10;
     @media only screen and (max-width: 1100px){
       clip-path: circle(52% at 4% 52%);    
@@ -66,14 +66,14 @@ const PriceShape = styled.div`
     ${Shape}
     position: absolute;
     clip-path: polygon(67% 0, 100% 0, 100% 35%, 100% 70%, 100% 100%, 67% 100%, 0 100%, 68% 91%, 67% 9%, 0 0);
-    background-color: crimson;
+    background-color: #dc143c !important;
 `;
 
 export const FooterShapeCrimson = styled.div`
     ${Shape}
     position: absolute;
     clip-path: polygon(0 0, 40% 0, 40% 100%, 0% 100%);
-    background-color: crimson;
+    background-color: #dc143c !important;
     @media only screen and (max-width: 480px){
       clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
    }

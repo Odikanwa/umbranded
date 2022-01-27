@@ -59,11 +59,13 @@ const Image = styled.img`
     margin-top: 30%;
         align-self: center;
         height: 60%;
+        width: 60%;
     `}
     @media only screen and (min-width:768px) and (max-width:1100px){
         margin-top: 30%;
         align-self: center;
         height: 60%;
+        width: 60%;
     }
 `;
 
