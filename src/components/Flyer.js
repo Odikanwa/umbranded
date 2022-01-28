@@ -157,12 +157,12 @@ const Flyer = () => {
                     <Title>Fly the Word!</Title>
                     <Desc>
                         Flyers are nowhere close to being gone. They just moved neighborhoods. You are right,
-                        nobody accepts flyers on the street anymore, except the street is not online. Got you.
+                        nobody accepts flyers on the street anymore, except the real street is online now. Got you.
                     </Desc>
 
                     <Desc>Just the neccessary details, the bold ones, the colorful. Do not bore. Do not 
                         explain. Go for the eyeballs, stay on track,  treat them to beauty and guide them to
-                        action. Do not forget to stick your brand to it! 
+                        action. Do not forget to stick in your brand! 
                     </Desc>
                     <Desc>
                         Here, treat yourself to our collections of designs for inspirations. Could always make

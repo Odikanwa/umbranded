@@ -48,12 +48,17 @@ const Left = styled.div`
 `;
 
 const Image = styled.img`
+    width: 70%;
+    height:70%;
+    margin-top: 15%;
+    margin-left: 10%;
+    vertical-align: middle;
+    ${MediaQueries('mobileS_min', 'mobileM_max')`
     width: 90%;
     height:90%;
     margin-top: 5%;
-    vertical-align: middle;
-    ${MediaQueries('mobileM_min', 'mobileM_max')`
-        align-self: center;
+    vertical-align: middle
+    align-self: center;
     `}
     ${MediaQueries('tablet_min', 'tablet_max')`
     margin-top: 30%;

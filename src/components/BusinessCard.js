@@ -110,10 +110,7 @@ const CardContainer = styled.div`
     margin-top: 30px;
     ${MediaQueries('mobileS_min', 'mobileS_max')`
         margin-top: 10%;
-    `}
-    
-    
-    
+    `}  
 `;
 
 const Button = styled.button`
